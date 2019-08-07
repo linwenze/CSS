@@ -17,12 +17,12 @@ module.exports = {
           'css-loader'
         ],
       },     
-      {
-                test: /base.css$/,
-                use: [
-                    'postcss-loader'
-                ],
-      },
+      // {
+      //           test: /base.css$/,
+      //           use: [
+      //               'postcss-loader'
+      //           ],
+      // },
       // use: [
       //   { loader: 'postcss-loader', options: {
       //     ident: 'postcss',
