@@ -1,40 +1,61 @@
 //about.vue
 <template>
-  <div>
-    <div class="note">使用 background-clip: padding-box;属性避免背景色污染边框透明</div>
-    <div class="border-normal"></div>
-    <div class="border-clip"></div>
-    <a href="http://www.baidu.com"></a>
+  <div class="wrap">
+    <imgCut ref="Uppicinput" @callback="callback" :width="200" :height="200">
+    <div>上传按钮</div>
+</imgCut>
+<img :src="imgsrc">
+    
   </div>
 </template>  
 <script>
+import {imgCut} from 'vue-imgcut'
+
 export default {
-  name: "hello",
-  components: {},
-  mounted() {},
-  data() {
-    return {};
-  },
-  watch: {},
-  created() {},
-  methods: {}
-};
+    data(){
+        return{
+            imgsrc:'',
+        }
+    },
+    components:{
+        imgCut
+    },
+    methods:{
+        callback(img){
+            this.imgsrc=img
+            //console.log(imgss)
+        }
+    }
+}
+
 </script>
-<style scope>
-a:after { content: attr(href); font-size: 12px; }
-.border-normal{
-   border: 10px solid rgba(0,0,0,0.5);
-  background: red;
-  width: 100px;
-  height: 100px;
+<style scoped lang="less">
+.wrap{font-size:24px}
+.borderradius{
+  width:200px;
+  height:200px;
   margin:30px;
+  background: yellow;
+  /* border-radius: 100px; */
+  border-radius:  50% / 100% 100% 0 0;
 }
-.border-clip {
-  border: 10px solid rgba(0,0,0,0.5);
-  background: red;
-  background-clip: padding-box;
-  width: 100px;
-  height: 100px;
+.borderradius2{
+  width:200px;
+  height:200px;
   margin:30px;
+  background: yellow;
+  /* border-radius: 100px; */
+  border-radius:  100% 0 0 100% / 50%;
 }
+.borderradius3{
+  width:200px;
+  height:200px;
+  margin:30px;
+  background: yellow;
+  /* border-radius: 100px; */
+  border-radius:  100% 0 0 0;
+}
+
+
+
 </style>

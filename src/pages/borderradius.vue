@@ -20,7 +20,7 @@ export default {
   methods: {}
 };
 </script>
-<style scope>
+<style scoped lang="less">
 .wrap{font-size:24px}
 .borderradius{
   width:200px;
